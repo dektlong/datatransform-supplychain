@@ -1,5 +1,4 @@
-# Accelerator to create an AppStack supply-chain for operating microservices
+# Accelerator for operating microservices
 
-Application and services boiler-plate configs
-
-Support both kuberentes and tanzu application service
+* Help create an AppStack supply-chain for managing a collection of microservices 
+* Application and services boiler-plate configs
