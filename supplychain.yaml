@@ -1,0 +1,30 @@
+# this is a mockup file to illustrate future AppStack concepts 
+apiVersion: experimental.kontinue.io/v1
+kind: Workload
+metadata:
+  name: microservices-supplychain
+  labels:
+    app.kubernetes.io/name: microservices-supplychain
+    app.tanzu.vmware.com/workload-type: supplychain
+  spec:
+    components:
+      - name: source-provider
+        templateRef:
+          kind: SourceTemplate
+          name: git-repository-battery
+
+      - name: build-image-provider
+        templateRef:
+          kind: BuildTemplate
+          name: kpack-battery
+        sources:
+          - component: source-provider
+            name: online-stores-builder
+
+      -name: opinion-service-workload-template-provider
+        templateRef:
+          kind: OpinionTemplate
+          name: online-store-workflow
+          # 1. build workload(s)
+          # 2. deploy workload(s)
+          # 3. apply api routes(s)

@@ -1,3 +1,9 @@
+Microservices supch:
+Show workflow as commented 
+Options - include route update as part of build 
+Builder consistency - cluster/namespace
+Build packs source: Tanzu, packeto, docierhub
+
 command:
   name: new
   description: Create a new microservice for online Stores
