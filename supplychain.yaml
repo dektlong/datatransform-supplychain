@@ -19,12 +19,12 @@ metadata:
           name: kpack-battery
         sources:
           - component: source-provider
-            name: online-stores-builder
+            name: onlinestore-builder
 
       -name: opinion-service-workload-template-provider
         templateRef:
           kind: OpinionTemplate
-          name: online-store-workflow
+          name: onlinestore-workflow
           # 1. build workload(s)
           # 2. deploy workload(s)
           # 3. apply api routes(s)

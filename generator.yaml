@@ -1,59 +1,28 @@
-Microservices supch:
-Show workflow as commented 
-Options - include route update as part of build 
-Builder consistency - cluster/namespace
-Build packs source: Tanzu, packeto, docierhub
-
 command:
   name: new
   description: Create a new microservice for online Stores
   options:
-    - name: pipeline-steps
-      description:  sso
-      dataType: string
-      defaultValue: yes
-      inputType: checkbox    #multiple options
-      choices:
-        project: yes
-        internal: no
-    - name: target
-      description:  keys
-      dataType: string
-      #defaultValue: functionality
-      inputType: select    #single options
-      choices:
-        access-level: a
-        functionality: b
-        on-off-platform: b
-#
+    - name: apply-routes
+       description: Apply API routes as part of the build process   
+       dataType: boolean
+       defaultValue: true
+       inputType: toggle
+    - name: builder-scope
+       description: Scope of the image builders
+       dataType: string
+       inputType: select
+       choices:
+        cluster: Common builder for all workloads in the same cluster
+        namespace: Common builder for all workloads in the same namespace
+        workload: Builder per workload
+    - name: buildpack-type
+       description: Type of buildpacks that can be used
+       dataType: string
+       inputType: checkbox
+       defaultValue: tanzu   
+       choices:
+        taznu: Tanzu buildpacks
+        packeto: Packeto buildpacks
+        cnr: Cloud Native buildpacks
+        custome: Custome buildbacks
 
-sources:
-  include:
-    - name: everything
-      condition: true
-      patterns: [ '**/*' ]
-  exclude:
-    - name: test-container-filers
-      condition: "!#useTestContainers"
-      patterns: [ '**/*TestContainer*' ]
-    - name: hidden-files
-      condition: true
-      patterns:
-        - ".idea/**"
-        - ".git/**"
-        - "target/**"
-
-symbols:
-  derived:
-    - name: camelCaseProjectName
-      expression: "#helper.camelCase(#projectName)"
-
-
-transformations:
-  replace:
-    - name: 'Replace - project creation time in version controller'
-      regex: '1 January 1970 00:00:00 UT'
-      with: '#now'
-    - name: 'Replace - project name in version controller'
-      regex: 'name-mysqlapp'
-      with: '#camelCaseProjectName'
