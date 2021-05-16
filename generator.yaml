@@ -12,8 +12,8 @@ command:
       dataType: string
       inputType: select
       choices:
-        cluster: Common builder for all workloads in the same cluster
-        namespace: Common builder for all workloads in the same namespace
+        cluster: Builder for all workloads in the same cluster
+        namespace: Builder for all workloads in the same namespace
         workload: Builder per workload
     - name: buildpack-type
       description: Type of buildpacks that can be used
@@ -24,5 +24,5 @@ command:
         taznu: Tanzu buildpacks
         packeto: Packeto buildpacks
         cnr: Cloud Native buildpacks
-        custome: Custome buildbacks
+        custom: Custom buildbacks
 
