@@ -13,16 +13,3 @@ stacks:
     image: registry.pivotal.io/tanzu-base-bionic-stack/build@sha256:00bea4d6ff08f84bea03a126375cf236cfec3de30735a59c1a540d0c1c9374fc
   runImage:
     image: registry.pivotal.io/tanzu-base-bionic-stack/run@sha256:d7ce225d0061cc80333a06577faeed266efe9e74c578470a948517b668b5630c
-builders:
-- name: onliestore-builder
-  stack: base
-  store: default
-  order:
-  - group:
-    - id: tanzu-buildpacks/java
-  - group:
-    - id: tanzu-buildpacks/nodejs
-  - group:
-    - id: tanzu-buildpacks/java-native-image
-  - group:
-    - id: paketo-buildpacks/gradle
