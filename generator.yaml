@@ -3,24 +3,24 @@ command:
   description: Create a new microservice for online Stores
   options:
     - name: apply-routes
-       description: Apply API routes as part of the build process   
-       dataType: boolean
-       defaultValue: true
-       inputType: toggle
+      description: Apply API routes as part of the build process   
+      dataType: boolean
+      defaultValue: true
+      inputType: toggle
     - name: builder-scope
-       description: Scope of the image builders
-       dataType: string
-       inputType: select
-       choices:
+      description: Scope of the image builders
+      dataType: string
+      inputType: select
+      choices:
         cluster: Common builder for all workloads in the same cluster
         namespace: Common builder for all workloads in the same namespace
         workload: Builder per workload
     - name: buildpack-type
-       description: Type of buildpacks that can be used
-       dataType: string
-       inputType: checkbox
-       defaultValue: tanzu   
-       choices:
+      description: Type of buildpacks that can be used
+      dataType: string
+      inputType: checkbox
+      defaultValue: tanzu   
+      choices:
         taznu: Tanzu buildpacks
         packeto: Packeto buildpacks
         cnr: Cloud Native buildpacks
