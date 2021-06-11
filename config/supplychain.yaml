@@ -2,9 +2,9 @@
 apiVersion: experimental.kontinue.io/v1
 kind: Workload
 metadata:
-  name: microservices-supplychain
+  name: {{appName}}-App
   labels:
-    app.kubernetes.io/name: microservices-supplychain
+    app.kubernetes.io/name: {{appName}}-App
     app.tanzu.vmware.com/workload-type: supplychain
   spec:
     components:
