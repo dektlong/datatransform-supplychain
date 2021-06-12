@@ -1,0 +1,12 @@
+accelerator:
+  displayName: Simple workflow
+  description: Configure the path-to-production of a simple application
+  iconUrl: https://raw.githubusercontent.com/dektlong/dekt-images/80bfdbf23040731d16310e286e7d40b57e3b23d5/tanzu.png
+  tags:
+  - onlinestore-devops
+
+engine:
+  resources:
+  - name: all-other
+    includes: ["**"]
+    excludes: ["accelerator.yaml"]
