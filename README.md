@@ -1,4 +1,5 @@
-# Accelerator for operating microservices
+## Accelerator to configure a simple workflow that supports the following:
 
-* Help create an AppStack supply-chain for managing a collection of microservices 
-* Application and services boiler-plate configs
+- Single K8s Cluster / Single TAS foundation
+
+- Single app component
