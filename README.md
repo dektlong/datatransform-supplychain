@@ -1,4 +1,4 @@
-## Accelerator to configure a simple workflow that supports the following:
+## Accelerator to configure a simple workflow
 
 - Single K8s Cluster / Single TAS foundation
 
