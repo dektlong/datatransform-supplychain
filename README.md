@@ -1,4 +1,4 @@
-## Accelerator to configure a simple workflow
+## Accelerator to configure a Data Transformation workflow
 
 - Single K8s Cluster / Single TAS foundation
 
